@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="/css/style_artist.css">
+	
+</head>
+<body>
+	<div class="artist_container">
+		<div class="artist_menu">
+			<div class="header_menu">
+				<a href=""><img src="http://res.cloudinary.com/uet/image/upload/v1504288766/ctwc0kxsizfsth2zpxfk.png"></a>
+			</div>
+			<div class="info_user">
+				<span><img src="<%=session.avatar%>"> Hello, <%= session.username%></span>
+			</div>
+			<div class="content_menu">
+				<ul>
+					<li class="active">
+						<a href="/home"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a>
+					</li>
+					<li class="no_active" id="ck_background">
+						<a href="/background"><i class="glyphicon glyphicon-picture"></i> Background</a>
+					</li>
+					<li class="no_active" id="ck_character">
+						<a href="/character"><i class="glyphicon glyphicon-tree-deciduous"></i> Character</a>
+					</li>
+					<li class="no_active" id="ck_sticker">
+						<a href="/sticker"><i class="glyphicon glyphicon-hourglass"></i> Sticker</a>
+					</li>
+					<li class="no_active">
+						<a href=""><i class="glyphicon glyphicon-calendar"></i> Calendar</a>
+					</li>
+				</ul>			 
+			</div>
+		</div>
+		<div class="artist_content">
+			<%include header%>
+			<div class="content">
+				<div id="page-content">
+		                <div class="row" >
+		                    <div class="col-lg-12">
+		                        <h4 class="page-header">
+		                            <i class="glyphicon glyphicon-dashboard"></i> <a href="/home"> Dashboard </a> 
+		                        </h4>
+		                    </div>
+		                </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>

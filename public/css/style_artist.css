@@ -1,0 +1,224 @@
+/*artist*/
+
+.artist_container{
+	min-height: 1000px;
+	width: 100%
+}
+.artist_menu{
+	min-height: 1000px;
+	width: 16%;
+	background-color: #333;
+	color : #c0bfbb;
+	float: left;
+}
+.artist_content{
+	width: 84%;
+	height: 100%;
+	float: right;
+	min-height: 1000px;
+}
+.header{
+	height: 50px;
+	background-color: #fff;
+	border-bottom: 1px solid #d3d3d3;
+}
+.content{
+	min-height: 950px;
+	background-color: #f9f9f9;
+}
+.header_menu{
+	height: 60px;
+	text-align: center;
+}
+.header_menu img{
+	width: 40px;
+	height: auto;
+	padding: 5px 0px 5px 0px;
+}
+.info_user{
+	height: 70px;
+}
+.info_user img{
+	width: 60px;
+	height: auto;
+	padding: 5px 5px 0px 5px;
+	border-radius: 50px;
+}
+.content_menu ul{
+	width: 100px;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+
+}
+.content_menu li{
+	min-height: 45px;
+	padding: 10px 0px 10px 10px;
+
+}
+.active{
+	background-color: #444;
+}
+.active a{
+	color: #ffffff;
+	font-size: 14px;
+	text-decoration: none;
+}
+.no_active a{
+	color: #c4cacc;
+	font-size: 14px;
+	text-decoration: none;
+}
+.no_active a:hover{
+	color: #ffffff;
+}
+.header_left{
+	width: 80%;
+	float: left;
+}
+.header_right{
+	width: 20%;
+	float: right;
+}
+#navbar-right li a{
+	color: #000000
+}
+.page-content{
+	height: 250px;
+}
+
+.page-header{
+	margin: 0px;
+	padding: 15px 0px 15px 15px;
+}
+.row{
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+#crbackground, #crcharacter, #crsticker{
+	padding: 15px 0px 15px 15px;
+	font-size: 16px;
+}
+
+
+#loi_title, #loi_img{
+	color: #cb2431;
+	font-weight: inherit;
+}
+
+#myModalshow{
+	
+}
+#noidung{
+	padding: 5px;
+	border: 1px solid #d3d3d3;
+}
+.news{
+width: 100%;
+height: auto;
+padding: 10px;
+background-color: #e6e6e6;
+}
+.article {
+width: 200px;
+height: 250px;
+display: inline-block;
+padding: 5px;
+margin-left: 17px;
+vertical-align:top;
+
+}
+.thumb {
+width: 200px;
+height: 210px;
+background-color: #3e3e3e;
+background-image: none;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+border: 1px solid #d3d3d3;
+border-bottom: none;
+} 
+.news{
+width: 100%;
+height: auto;
+padding: 10px;
+background-color: #e6e6e6;
+}
+.articlezum {
+	margin-top: 17px;
+	margin-left: 350px;
+width:600px ;
+height: 600px;
+display: inline-block;
+padding: 5px;
+
+vertical-align:top;
+
+}
+.thumbzum {
+width: 600px;
+height: 600px;
+background-color: #3e3e3e;
+background-image: none;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+border: 1px solid #d3d3d3;
+
+}
+.msg{
+	font-size: 20px;
+}
+.msg .glyphicon-ok{
+	color: #4CAF50;
+	
+}
+.msg .glyphicon-alert{
+	color: #d72e2b;
+}
+.msg .glyphicon-question-sign{
+	color: #149afb;
+}
+.title{
+	padding-top : 155px;
+	padding-left: 160px;
+}
+.titleapp{
+	padding-left: 140px;
+	border: 1px solid #d3d3d3;
+	width: 200px;
+	background-color: #ffffff;
+	height: 30px;
+}
+.input-group{
+	padding: 15px 10px 15px 0px;
+}
+.input-group .form-control{
+	width: 500px;
+}
+#loi_email, #loi_username, #loi_pass, #loi_repass{
+	color: #cb2431;
+	font-weight: inherit;
+}
+#loi_new_pass, #loi_confirm_pass, #loi_current_pass{
+	color: #cb2431;
+	margin-left: 200px;
+}
+
+#inputsearch{
+	height: 28px; border-radius: 3px; padding: 5px; width: 400px; border: 1px solid #d2cccc; margin-left: 15px; font-size: 14px;
+}
+#buttonsearch{
+	margin: 0px; padding: 0px; width: 26px; height: 26px;
+}
+
+th, td{
+	text-align: center;
+}
+td:hover{
+	text-decoration: underline;
+}

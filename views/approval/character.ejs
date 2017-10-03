@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="/css/style_artist.css">
+	
+</head>
+<body>
+	<div class="artist_container">
+		<div class="artist_menu">
+			<div class="header_menu">
+				<a href=""><img src="http://res.cloudinary.com/uet/image/upload/v1504288766/ctwc0kxsizfsth2zpxfk.png"></a>
+			</div>
+			<div class="info_user">
+				<span><img src="<%=session.avatar%>"> Hello, <%= session.username%></span>
+			</div>
+			<div class="content_menu">
+				<ul>
+					<li class="no_active">
+						<a href="/approval/home"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a>
+					</li>
+					<li class="no_active" id="ck_background">
+						<a href="/approval/background"><i class="glyphicon glyphicon-picture"></i> Background</a>
+					</li>
+					<li class="active" id="ck_character">
+						<a href="/approval/character"><i class="glyphicon glyphicon-tree-deciduous"></i> Character</a>
+					</li>
+					<li class="no_active" id="ck_sticker">
+						<a href="/approval/sticker"><i class="glyphicon glyphicon-hourglass"></i> Sticker</a>
+					</li>
+					<li class="no_active">
+						<a href=""><i class="glyphicon glyphicon-calendar"></i> Calendar</a>
+					</li>
+				</ul>			 
+			</div>
+		</div>
+		<div class="artist_content">
+			<%include header%>
+			<div class="content">
+				<div id="page-content">
+					<div class="row" >               
+						<div class="col-lg-12">
+							<h4 class="page-header">
+								<i class="glyphicon glyphicon-dashboard"></i> <a href="/approval/home"> Dashboard </a> <i class="glyphicon glyphicon-chevron-right"></i> <small> <a href="/approval/character"> Character </a> </small>
+									<input id="inputsearch"  type="text" name="search" placeholder="Tìm kiếm">
+								<button id="buttonsearch" ><i class="glyphicon glyphicon-search" style="font-size: 14px;"></i></button>
+							</h4>
+						</div>
+						
+
+					</div>
+				</div>
+				<!-- Modal -->
+				<div class="modal fade" id="myModaledit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document" id="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+								<p class="modal-title" id="cc" style="color: #000000; font-size: 20px" >Edit Character</p>
+							</div>
+							<div class="modal-body">
+								<input type="hidden" name="topicId" id = "topicId" value="">
+								<label>Title</label>
+								<input type="text" class="form-control" name="title" id ="edittitle"></br>
+								<span id="loi_title"></span>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button id = "editcharacter"  class="btn btn-success">Edit</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div> <!-- end modal -->
+				<!-- Modal -->
+				<div class="modal fade" id="myModalshow" role="dialog">
+
+					<div >
+
+						<div  id="show_img_title">	
+
+						</div>
+					</div>
+
+				</div>
+				<!-- Modal -->
+				<div class="modal fade" id="myModalalert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document" id="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<p class="modal-title" id="cc" style="color: #000000; font-size: 20px" >Alert</p>
+							</div>
+							<div class="modal-body">
+								<input type="hidden" name="characterIdalert" id = "characterIdalert" value="">
+								<input type="hidden" name="artistIdalert" id = "artistIdalert" value="">
+								<input type="hidden" name="imgalert" id="imgalert" value="">
+								<label>Nội dung alert</label><br/>	  
+						        <input type="checkbox" name="hobby" value="Nội dung này không phù hợp"/> <label>Nội dung này không phù hợp</label> <br/>
+						        <input type="checkbox" name="hobby" value="Nội dung là spam"/> <label>Nội dung là spam</label> <br/>
+						        <input type="checkbox" name="hobby" value="Nội dung đồi trụy"/> <label>Nội dung đồi trụy</label> <br/>
+						      
+						        <input type="checkbox" name="hobby" value="Hình ảnh này không đảm bảo chất lượng"/> <label>Hình ảnh này không đảm bảo chất lượng</label> <br/>
+						      
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button id = "alertcharacter"  class="btn btn-success">Alert</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div> <!-- end modal -->
+			<div class="body-content">
+				<div id="news" class="news"></div>
+				
+							<% var stt = 1 %>
+							<%if (topiccharacter != ''){%>
+							<div class="table-responsive" id="tablecc">
+					<table class="table table-bordered table-hover table-striped">
+						<thead>
+							<tr>
+								<th>STT</th>
+								<th>Title</th>
+								<th>Status</th>
+								<th>Edit</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%for(i in topiccharacter){%>
+							<%if(stt % 2 == 0){ %>
+							<tr class="success" id="cc<%=topiccharacter[i]._id%>">
+								<%}else{%> 
+								<tr class="warning" id="cc<%=topiccharacter[i]._id%>">
+									<%}%>
+									
+										<td style="width: 5%"><%= stt %><input type="hidden" id="<%=stt%>" value = "<%=topiccharacter[i]._id%>" ></td>
+									<td style="color: blue; text-align: left; cursor: pointer;" onclick ="clickTitleCharacter('<%=topiccharacter[i]._id%>','<%=topiccharacter[i].artistId%>')"><%= topiccharacter[i].title %></td>
+									<%if(topiccharacter[i].status == 1){%>
+											<td style="width: 10%">Confirm</td>
+										<%}else{%>
+											<td style="width: 10%">Waitting</td>
+										<%}%>
+									<td style="width: 5%"><span class="btn btn-info" data-toggle="modal" data-target="#myModaledit" onclick="ClickEdit(<%=stt++ %>)">Edit</span></td>
+									<td style="width: 5%"><span class="btn btn-warning" onclick="clickDelete('<%=topiccharacter[i]._id%>')">Delete</span></td>
+									
+								</tr>
+
+								<%}%>		
+								<% }%>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<script src="/js/approval/index.js"></script>
+<script src="/js/approval/character.js"></script>
+</body>
+</html>

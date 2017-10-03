@@ -1,0 +1,242 @@
+<div class="header">
+	<nav class="navbar" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><i class="glyphicon glyphicon-list"></i></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right" id="navbar-right">
+					<!-- <li><a href="#"><i class="glyphicon glyphicon-envelope"><span class="badge">0</span></i></a></li> -->
+					<li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-envelope"><span class="badge">0</span></i> </a>
+	                    <ul class="dropdown-menu message-dropdown">
+	                        <li class="message-preview">
+	                            <a href="#">
+	                                <div class="media">
+	                                    <span class="pull-left">
+	                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+	                                    </span>
+	                                    <div class="media-body">
+	                                        <h5 class="media-heading"><strong>John Smith</strong>
+	                                        </h5>
+	                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+	                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+	                                    </div>
+	                                </div>
+	                            </a>
+	                        </li>
+	                        <li class="message-preview">
+	                            <a href="#">
+	                                <div class="media">
+	                                    <span class="pull-left">
+	                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+	                                    </span>
+	                                    <div class="media-body">
+	                                        <h5 class="media-heading"><strong>John Smith</strong>
+	                                        </h5>
+	                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+	                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+	                                    </div>
+	                                </div>
+	                            </a>
+	                        </li>
+	                        <li class="message-preview">
+	                            <a href="#">
+	                                <div class="media">
+	                                    <span class="pull-left">
+	                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+	                                    </span>
+	                                    <div class="media-body">
+	                                        <h5 class="media-heading"><strong>John Smith</strong>
+	                                        </h5>
+	                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+	                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+	                                    </div>
+	                                </div>
+	                            </a>
+	                        </li>
+	                        <li class="message-footer">
+	                            <a href="#">Read All New Messages</a>
+	                        </li>
+	                    </ul>
+	                </li>
+					<!-- <li><a href="#"><i class="glyphicon glyphicon-alert"><span class="badge">0</span></i></a></li> -->
+					<li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-alert"><span class="badge"><%=total%></span></i></a>
+	                   
+	                    	<%if (warning != ''){%>
+	                    	 <ul class="dropdown-menu alert-dropdown" style="height : 350px;width:350px; overflow:auto;">
+	                    			<%for(i in warning){%>
+	                    				 <li class="message-preview">
+				                            <a href="#">
+				                                <div class="media">
+				                                    <span class="pull-left">
+				                                        <img class="media-object" style = "width:50px; height :50px;" src="<%=warning[i].url%>" alt="">
+				                                    </span>
+				                                    <div class="media-body">
+				                                        <h5 class="media-heading"><strong><span class="label label-warning">Alert</span></strong>
+				                                        </h5>
+				                                        <p class="small text-muted"><i class="fa fa-clock-o"></i><%=warning[i].created_at%></p>
+				                                        <p><%=warning[i].content%></p>
+				                                    </div>
+				                                </div>
+				                            </a>
+				                          </li>
+				                        
+	                    			<%}%>
+	                    		<li class="divider"></li>
+		                        <li>
+		                            <a href="#">View All</a>
+		                        </li>
+			                 </ul>
+	                    	<%}else{%>
+	                    	 <ul class="dropdown-menu alert-dropdown">
+	                    		<li class="message-preview">
+				                            <a href="#">
+				                                <div class="media">
+				                                   <span>Bạn không có cảnh báo nào!</span>
+				                                </div>
+				                            </a>
+				                            </li>
+				                            </ul>
+	                    	<%}%>
+	                        
+	                        
+	                </li>
+					<li><a href=""><i class="glyphicon glyphicon-tasks"><span class="badge">0</span></i></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <%= session.username%> <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#myModalProfile"><i class="glyphicon glyphicon-user"></i> Profile</a>
+							</li>
+							<li>
+								<a href="#" data-toggle="modal" data-target="#myModalFeedback"><i class="glyphicon glyphicon-envelope"></i> Inbox</a>
+							</li>
+							<li>
+								<a href="#"><i class="glyphicon glyphicon-cog"></i> Settings</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="/logout"><i class="glyphicon glyphicon-off"></i> Log Out</a>
+							</li>
+						</ul>
+					</li>
+
+							<div class="modal fade" id="myModalFeedback" role="dialog">
+		    <div class="modal-dialog">
+
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal" aria-lable="Close"><span aria-hidden="true">&times;</span></button>
+		          <h4 class="modal-title"><span class="glyphicon glyphicon-envelope"></span>  Feadback</h4>
+		      </div>
+		      <div class="modal-body" style="padding: 0px;">
+		          <form action ="/api/feedback"  method="post">
+		            <div class="form-group" style="margin-bottom: 0px;">
+		       
+		              <lable><h4 style="padding:8px;">Bạn có thắc mắc gì?</h3></lable>
+		 		
+		           
+		              <textarea name ="content"  id ="editer" style="width: 100%; min-height: 280px; resize: none; padding: 8px;" placeholder="Nội dung...."></textarea>
+		          </div>          
+		      </div>
+		      <div class="modal-footer">
+		          <p type="submit" class="pull-left" data-dismiss="modal"><span class="fa fa-trash-o" style="font-size: 24px;"></p>
+	
+		            <p><button type="submit" style="background: #222; color: #ffffff">Gửi</button></p>
+		      </div>
+		  </form>
+		</div>
+
+					<!-- Modal -->
+						<div class="modal fade" id="myModalProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+							<div class="modal-dialog" role="document" id="modal-dialog">
+								<div class="modal-content"style="background-color:#f2f2f2">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+										<p class="modal-title" id="myModalLabel" style="color: #000000; font-size: 20px" ><%=session.username%></p>
+									</div>
+									<div class="modal-body" style="padding:0px;">
+											<ul class="nav navbar-nav" style="    position: relative;
+														    height: 30px;
+														    line-height: 30px;
+														    background: rgba(0,0,0,0.1);
+														    border: 1px solid #b3b3b3;
+														    padding: 0 10px;">
+												<li style="position: relative;
+														    background: #f2f2f2;
+														    height: 27px;
+														    z-index: 3;  border-left: 1px solid #b3b3b3;"><a data-toggle="tab" href="#info" style="padding:5px 10px 0px 10px">Thông tin cá nhân</a></li>
+												<li style="position: relative;
+														    background: #f2f2f2;
+														    height: 27px;
+														    z-index: 3;  border-left: 1px solid #b3b3b3; border-right:1px solid #b3b3b3;"><a data-toggle="tab" href="#doiinfo" style="padding:5px 10px 0px 10px">Chỉnh sửa thông tin</a></li>
+												<li style="position: relative;
+														    background: #f2f2f2;
+														    height: 27px;
+														    z-index: 3;  border-left: 1px solid #b3b3b3; border-right:1px solid #b3b3b3;"><a data-toggle="tab" href="#doimk" style="padding:5px 10px 0px 10px">Đổi mật khẩu</a></li>
+											</ul>
+
+										<div id="" style="height:420px; padding:25px;" >
+										<div class="tab-content">
+												<div id="info" class="tab-pane fade in active" style="background:#f2f2f2">
+													</br>
+													<p>Avatar : <img src="<%=session.avatar%>" style="width:120px; height:auto; border-radius: 50px; margin-left:150px;"/></p>
+													<hr/>
+													<p>Username : <%=session.username%></p>
+													<p>Email : <%=session.email%></p>
+													<p>Position : Artist</p>
+												</div>
+												<!-- <div id="doiinfo" class="tab-pane fade" style="background:#f2f2f2">
+												</br>
+												<form action="/api/changeinfo" method="post" enctype="multipart/form-data">
+													<p>Avatar : <img src="<%=session.avatar%>" style="width:100px; height:auto; border-radius: 50px; margin-left:150px;"/></p>
+													<p><input type="file" id="change_avatar" name="files" /></p>
+													<hr/>
+
+													<p>Username : <input type="text" id="chang_username"  name="usernamechange" value="<%=session.username%>" style="margin-left:50px; border-radius:2px; width:350px; height:30px; "/></p>
+													<p>Email 	: <input type="text"  id="change_email" value="<%=session.email%>" style="margin-left:80px; border-radius:2px; width:350px; height:30px; background-color:#b3b3b3" " readonly/></p>
+
+													<hr>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														<button  type="submit" class="btn btn-success">Save</button>
+													</div>
+													<form>
+												</div> -->
+												<div id="doimk" class="tab-pane fade" style="background:#f2f2f2">
+													</br>
+													<hr/>
+														<input type="hidden" value ="<%=session.password%>" id="sespass">
+														<p>Current Password : <input type="password" id="currentpass" " style="margin-left:50px; border-radius:2px; width:350px; height:30px; "/></p>
+														<span id="loi_current_pass"></span>
+														<p>New Password : <input type="password" id="newpass" style="margin-left:67px; border-radius:2px; width:350px; height:30px; "/></p>
+														<span id="loi_new_pass"></span>
+														<p>Confirm Password : <input type="password" id="confirmpass" style="margin-left:47px; border-radius:2px; width:350px; height:30px; "/></p>
+														<span id="loi_confirm_pass"></span>
+														<div style="height:40px"></div>
+													<hr/>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														<button id="thaydoipass" class="btn btn-success">Save</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+
+									</div>
+								</div>
+							</div>
+						</div> <!-- end modal -->
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div>
+	</nav>
+</div>

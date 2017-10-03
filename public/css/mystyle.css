@@ -1,0 +1,45 @@
+
+/*Index*/
+.header{
+	background-color: #030303;
+}
+a{
+	color: #ffffff
+}
+.navbar{
+	margin: 0px 80px 0 80px;
+}
+.navbar-brand{
+	padding: 0px;
+}
+.navbar-brand img{
+	width: 40px;
+	height: auto;
+}
+
+.container{
+	background-color: #222222;
+	width: 100%;
+	min-height: 800px;
+}
+.content{
+	margin: 120px 200px 0 200px;
+}
+
+.content h1{
+	color: #f6ec8b
+}
+.content p{
+	color: #4b4b4b
+}
+.input-group{
+	padding: 15px 10px 15px 0px;
+}
+.input-group .form-control{
+	width: 300px;
+}
+#loi_email, #loi_username, #loi_pass, #loi_repass{
+	color: #cb2431;
+	font-weight: inherit;
+}
+
